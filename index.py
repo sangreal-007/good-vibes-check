@@ -5,7 +5,7 @@ st.title("Good Vibes Check! ✨")
 st.write("We’re here to check in on you and send some positive vibes your way.")
 
 # Start interaction
-st.write("Press [Enter] to begin...")
+st.write("Lets start...")
 
 # First Question
 feeling = st.text_input("Do you feel good today? (yes/no/idk):").lower()
