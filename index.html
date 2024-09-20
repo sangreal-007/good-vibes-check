@@ -6,26 +6,27 @@
     <title>Good Vibes Check</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f0f8ff;
-            text-align: center;
+            color: #333;
             padding: 20px;
+            text-align: center;
         }
+
         #output {
-            background-color: #f4f4f4;
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-top: 20px;
-            height: 200px;
-            overflow: auto;
-            white-space: pre-wrap;
+            background-color: #000;
+            color: #0f0;
             font-family: monospace;
-        }
-        textarea {
-            width: 100%;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            border: 2px solid #00FF00;
+            width: 80%;
             height: 300px;
-            margin-top: 20px;
+            overflow-y: scroll;
+            text-align: left;
         }
+
         button {
             background-color: #4CAF50;
             color: white;
@@ -35,9 +36,11 @@
             cursor: pointer;
             font-size: 16px;
         }
+
         button:hover {
             background-color: #45a049;
         }
+
     </style>
     <script src="https://cdn.jsdelivr.net/npm/skulpt@0.11.0/skulpt.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/skulpt@0.11.0/skulpt-stdlib.js"></script>
@@ -47,10 +50,7 @@
     <h1>Good Vibes Check ✨</h1>
     <p>We’re here to check in on you and send some positive vibes your way.</p>
 
-    <!-- This is where the Python output will be displayed -->
     <div id="output"></div>
-
-    <!-- Button to run Python code -->
     <button onclick="runPython()">Start Good Vibes Check</button>
 
     <script>
@@ -94,11 +94,11 @@ else:
 reflection = input("What's something you're grateful for today? (type anything): ")
 print(f"That’s wonderful! Being grateful for {reflection} is a beautiful way to stay positive. ✨")
 `;
+
             let mypre = document.getElementById("output");
             mypre.innerHTML = '';  // Clear the output field
             Sk.pre = "output";
             Sk.configure({ output: outf, read: builtinRead });
-            (Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = 'mycanvas';
             let promise = Sk.misceval.asyncToPromise(function() {
                 return Sk.importMainWithBody("<stdin>", false, prog, true);
             });
