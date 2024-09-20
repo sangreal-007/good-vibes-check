@@ -1,119 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Good Vibes Check</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            padding: 20px;
-            text-align: center;
-        }
+// Javascript code generated from ast
+var $B = __BRYTHON__,
+    _b_ = $B.builtins,
+    locals___main__ = $B.imported["__main__"],
+    locals = locals___main__,
+    frame = ["__main__", locals, "__main__", locals]
+var __file__ = frame.__file__ = '<string>'
+locals.__name__ = '__main__'
+locals.__doc__ = _b_.None
+locals.__annotations__ = locals.__annotations__ || $B.empty_dict()
+frame.$f_trace = $B.enter_frame(frame)
+$B.set_lineno(frame, 1)
 
-        #output {
-            background-color: #000;
-            color: #0f0;
-            font-family: monospace;
-            padding: 20px;
-            margin: 20px auto;
-            border-radius: 8px;
-            border: 2px solid #00FF00;
-            width: 80%;
-            height: 300px;
-            overflow-y: scroll;
-            text-align: left;
-        }
+var _frame_obj = $B.frame_obj
+var stack_length = $B.count_frames()
+try{
+  frame.$lineno = 1
+  var no_break_699400948394208 = true,
+      iterator_699400948394208 = $B.$call(_b_.range, [9,9,18])(10)
+  for(var next_699400948394208 of $B.make_js_iterator(iterator_699400948394208, frame, 1)){
+    locals___main__.i = next_699400948394208
+    $B.set_lineno(frame, 2);
+    $B.$call(_b_.print, [1,1,9])(locals___main__.i)
+  }
+  $B.set_lineno(frame, 3);
+  $B.$call(_b_.print, [0,0,49])($B.rich_op('__add__', $B.rich_op('__add__', 'Welcome to the Good Vibes Check!', ' ', [6,6,44,44]), '✨', [6,6,48,48]))
+  $B.set_lineno(frame, 4);
+  $B.$call(_b_.print, [0,0,78])('We´re here to check in on you and send some positive vibes your way.')
+  $B.set_lineno(frame, 5);
+  $B.$call(_b_.input, [0,0,34])('Press [Enter] to begin...')
+  $B.set_lineno(frame, 8)
+  locals___main__.feeling = $B.$call($B.$getattr_pep657($B.$call(_b_.input, [10,10,57])('Do you feel good today? (yes/no/idk): '), 'lower', [10,10,63]), [10,10,65])()
+  if($B.set_lineno(frame, 10) && $B.$bool($B.rich_comp('__eq__', locals___main__.feeling, 'yes'))){
+    $B.set_lineno(frame, 11);
+    $B.$call(_b_.print, [4,4,64])($B.make_String('That´s awesome! Keep spreading those good vibes! 🌟', [49]))
+    $B.set_lineno(frame, 12);
+    $B.$call(_b_.print, [4,4,76])($B.make_String('Remember, every day is an opportunity to do something great. 🚀', [61]))
+    $B.set_lineno(frame, 13);
+    $B.$call(_b_.print, [4,4,18])($B.rich_op('__mul__', '-', 40, [10,10,17,17]))
+  }else if($B.set_lineno(frame, 14) && $B.$bool($B.rich_comp('__eq__', locals___main__.feeling, 'no'))){
+    $B.set_lineno(frame, 15);
+    $B.$call(_b_.print, [4,4,61])($B.make_String('That´s okay. Not every day has to be perfect. 🌱', [46]))
+    $B.set_lineno(frame, 16);
+    $B.$call(_b_.print, [4,4,90])($B.make_String('Take a deep breath, and remember, things will get better. You´ve got this! 💪', [75]))
+    $B.set_lineno(frame, 17);
+    $B.$call(_b_.print, [4,4,18])($B.rich_op('__mul__', '-', 40, [10,10,17,17]))
+  }else if($B.set_lineno(frame, 18) && $B.$bool($B.rich_comp('__eq__', locals___main__.feeling, 'idk'))){
+    $B.set_lineno(frame, 19);
+    $B.$call(_b_.print, [4,4,61])($B.make_String('It´s okay not to know how you feel sometimes. 💕', [46]))
+    $B.set_lineno(frame, 20);
+    $B.$call(_b_.print, [4,4,76])($B.make_String('Take your time, reflect, and just be kind to yourself today. 💭', [61]))
+    $B.set_lineno(frame, 21);
+    $B.$call(_b_.print, [4,4,18])($B.rich_op('__mul__', '-', 40, [10,10,17,17]))
+  }else{
+    $B.set_lineno(frame, 23);
+    $B.$call(_b_.print, [4,4,78])($B.make_String('Hmm, i didn\'t understand that, but i hope you feel good today! 🫶', [64]))
+    $B.set_lineno(frame, 24);
+    $B.$call(_b_.print, [4,4,18])($B.rich_op('__mul__', '-', 40, [10,10,17,17]))
+  }
+  $B.set_lineno(frame, 27)
+  locals___main__.ambition = $B.$call($B.$getattr_pep657($B.$call(_b_.input, [11,11,91])('Do you have something you´re excited to work on today? (yes/no/maybe): '), 'lower', [11,11,97]), [11,11,99])()
+  if($B.set_lineno(frame, 29) && $B.$bool($B.rich_comp('__eq__', locals___main__.feeling, 'yes'))){
+    $B.set_lineno(frame, 30);
+    $B.$call(_b_.print, [4,4,66])($B.make_String('Fantastic! Go after it with everything you´ve got! 🌟', [51]))
+    $B.set_lineno(frame, 31);
+    $B.$call(_b_.print, [4,4,87])($B.make_String('Progress, no matter how small, is still progress. Keep pushing forward! 🧨', [72]))
+    $B.set_lineno(frame, 32);
+    $B.$call(_b_.print, [4,4,18])($B.rich_op('__mul__', '-', 40, [10,10,17,17]))
+  }else if($B.set_lineno(frame, 33) && $B.$bool($B.rich_comp('__eq__', locals___main__.feeling, 'no'))){
+    $B.set_lineno(frame, 34);
+    $B.$call(_b_.print, [4,4,51])($B.make_String('That´s okay. Rest is important too! 🌷', [36]))
+    $B.set_lineno(frame, 35);
+    $B.$call(_b_.print, [4,4,88])($B.make_String('Use today to recharge, and tomorrow you´ll be ready to tackle new goals! 🏅', [73]))
+    $B.set_lineno(frame, 36);
+    $B.$call(_b_.print, [4,4,18])($B.rich_op('__mul__', '-', 40, [10,10,17,17]))
+  }else if($B.set_lineno(frame, 37) && $B.$bool($B.rich_comp('__eq__', locals___main__.feeling, 'maybe'))){
+    $B.set_lineno(frame, 38);
+    $B.$call(_b_.print, [4,4,91])('That´s the spirit! Even a little bit of excitement can lead to great things! ✨')
+    $B.set_lineno(frame, 39);
+    $B.$call(_b_.print, [4,4,116])($B.make_String('Take a small step, and see where it leads! Sometimes the smallest action sparks the biggest results. 🔥', [101]))
+    $B.set_lineno(frame, 40);
+    $B.$call(_b_.print, [4,4,18])($B.rich_op('__mul__', '-', 40, [10,10,17,17]))
+  }else{
+    $B.set_lineno(frame, 42);
+    $B.$call(_b_.print, [4,4,84])($B.make_String('No worries! Just take it easy and focus on what makes you feel good. 🫂', [69]))
+    $B.set_lineno(frame, 43);
+    $B.$call(_b_.print, [4,4,18])($B.rich_op('__mul__', '-', 40, [10,10,17,17]))
+  }
+  $B.set_lineno(frame, 46)
+  locals___main__.reflection = $B.$call($B.$getattr_pep657($B.$call(_b_.input, [13,13,83])('What´s something you´re grateful for today? (type anything): '), 'lower', [13,13,89]), [13,13,91])()
+  $B.set_lineno(frame, 47);
+  $B.$call(_b_.print, [0,0,97])('That´s wonderful! Being grateful for {reflection} is a beautiful way to stay positive. ✨')
+  $B.set_lineno(frame, 48);
+  $B.$call(_b_.print, [0,0,77])($B.make_String('Gratitude can turn ordinary moments into extraordinary blessings! 💌', [66]))
+  $B.set_lineno(frame, 49);
+  $B.$call(_b_.print, [0,0,15])($B.rich_op('__mul__', '-', 40, [6,6,14,14]))
+  $B.set_lineno(frame, 50);
+  $B.$call(_b_.print, [0,0,15])($B.rich_op('__mul__', '-', 40, [6,6,14,14]))
+  $B.set_lineno(frame, 51);
+  $B.$call(_b_.print, [0,0,126])($B.make_String('Thank you for joining the Good Vibes Check today. I believe in you, and hope, you have an amazing rest of the day! 🥰', [115]))
+  $B.leave_frame({locals, value: _b_.None})
+}catch(err){
+  $B.set_exc_and_trace(frame, err)
+  $B.leave_frame({locals, value: _b_.None})
+  throw err
+}
 
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            margin-top: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/skulpt@0.11.0/skulpt.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/skulpt@0.11.0/skulpt-stdlib.js"></script>
-</head>
-<body>
-
-    <h1>Good Vibes Check ✨</h1>
-    <p>We’re here to check in on you and send some positive vibes your way.</p>
-
-    <div id="output"></div>
-    <button onclick="runPython()">Start Good Vibes Check</button>
-
-    <script>
-        function builtinRead(x) {
-            if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined) {
-                throw "File not found: '" + x + "'";
-            }
-            return Sk.builtinFiles["files"][x];
-        }
-
-        function runPython() {
-            let prog = `
-print("Welcome to the Good Vibes Check!" + " " + "✨")
-input("Press [Enter] to begin...")
-
-# First Question
-feeling = input("Do you feel good today? (yes/no/idk): ").lower()
-
-if feeling == "yes":
-    print("That’s awesome! Keep spreading those good vibes! 🌟")
-elif feeling == "no":
-    print("That’s okay. Not every day has to be perfect. 🌱")
-elif feeling == "idk":
-    print("It’s okay not to know how you feel sometimes. 💕")
-else:
-    print("Hmm, I didn't understand that, but I hope you feel good today! 🫶")
-
-# Second Question
-ambition = input("Do you have something you're excited to work on today? (yes/no/maybe): ").lower()
-
-if ambition == "yes":
-    print("Fantastic! Go after it with everything you've got! 🌟")
-elif ambition == "no":
-    print("That’s okay. Rest is important too! 🌷")
-elif ambition == "maybe":
-    print("That’s the spirit! Even a little excitement can lead to great things! ✨")
-else:
-    print("No worries! Just take it easy and focus on what makes you feel good. 🫂")
-
-# Final Question
-reflection = input("What's something you're grateful for today? (type anything): ")
-print(f"That’s wonderful! Being grateful for {reflection} is a beautiful way to stay positive. ✨")
-`;
-
-            let mypre = document.getElementById("output");
-            mypre.innerHTML = '';  // Clear the output field
-            Sk.pre = "output";
-            Sk.configure({ output: outf, read: builtinRead });
-            let promise = Sk.misceval.asyncToPromise(function() {
-                return Sk.importMainWithBody("<stdin>", false, prog, true);
-            });
-            promise.then(function() {
-                console.log('Success');
-            }, function(err) {
-                mypre.innerHTML = err.toString();
-            });
-        }
-
-        function outf(text) {
-            let mypre = document.getElementById("output");
-            mypre.innerHTML = mypre.innerHTML + text;
-        }
-    </script>
-
-</body>
-</html>
