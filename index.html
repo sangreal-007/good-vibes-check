@@ -10,6 +10,8 @@
             background-color: #f0f8ff;
             color: #333;
             padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
         }
         .separator {
             margin: 20px 0;
@@ -21,83 +23,76 @@
 
     <h1>Welcome to the Good Vibes Check! ✨</h1>
     <p>We’re here to check in on you and send some positive vibes your way.</p>
-    <button id="startBtn">Press [Enter] to begin...</button>
+    <button id="startBtn">Press to begin...</button>
 
-    <div id="questions" style="display: none;">
-        <div id="question1">
-            <p>Do you feel good today? (yes/no/idk):</p>
-            <input type="text" id="feelingInput">
-            <button onclick="handleFeeling()">Submit</button>
-        </div>
-
-        <div id="question2" style="display: none;">
-            <p>Do you have something you're excited to work on today? (yes/no/maybe):</p>
-            <input type="text" id="ambitionInput">
-            <button onclick="handleAmbition()">Submit</button>
-        </div>
-
-        <div id="question3" style="display: none;">
-            <p>What’s something you’re grateful for today? (type anything):</p>
-            <input type="text" id="reflectionInput">
-            <button onclick="handleReflection()">Submit</button>
-        </div>
-
-        <div id="finalMessage" style="display: none;">
-            <p id="reflectionMessage"></p>
-            <div class="separator"></div>
-            <p>Thank you for joining the Good Vibes Check today. I believe in you, and hope you have an amazing rest of the day! 🥰</p>
-        </div>
+    <div id="questions" style="display:none;">
+        <p id="question-text"></p>
+        <input type="text" id="userInput">
+        <button id="submitBtn">Submit</button>
+        <div class="separator"></div>
+        <p id="output"></p>
     </div>
 
     <script>
-        document.getElementById('startBtn').addEventListener('click', function() {
-            document.getElementById('startBtn').style.display = 'none';
-            document.getElementById('questions').style.display = 'block';
+        let currentStep = 0;
+        const questions = [
+            "Do you feel good today? (yes/no/idk):",
+            "Do you have something you're excited to work on today? (yes/no/maybe):",
+            "What's something you're grateful for today? (type anything):"
+        ];
+
+        const responses = [
+            {
+                yes: "That’s awesome! Keep spreading those good vibes! 🌟",
+                no: "That’s okay. Not every day has to be perfect. 🌱",
+                idk: "It’s okay not to know how you feel sometimes. 💕",
+                default: "Hmm, I didn't understand that, but I hope you feel good today! 🫶"
+            },
+            {
+                yes: "Fantastic! Go after it with everything you’ve got! 🌟",
+                no: "That's okay. Rest is important too! 🌷",
+                maybe: "That's the spirit! Even a little excitement can lead to great things! ✨",
+                default: "No worries! Just take it easy and focus on what makes you feel good. 🫂"
+            },
+            {
+                default: "That’s wonderful! Being grateful for what you mentioned is a beautiful way to stay positive. ✨"
+            }
+        ];
+
+        document.getElementById("startBtn").addEventListener("click", function () {
+            document.getElementById("startBtn").style.display = "none";
+            document.getElementById("questions").style.display = "block";
+            askQuestion();
         });
 
-        function handleFeeling() {
-            const feeling = document.getElementById('feelingInput').value.toLowerCase();
-            let message = '';
+        document.getElementById("submitBtn").addEventListener("click", function () {
+            handleResponse();
+        });
 
-            if (feeling === 'yes') {
-                message = "That’s awesome! Keep spreading those good vibes! 🌟";
-            } else if (feeling === 'no') {
-                message = "That’s okay. Not every day has to be perfect. 🌱";
-            } else if (feeling === 'idk') {
-                message = "It’s okay not to know how you feel sometimes. 💕";
+        function askQuestion() {
+            if (currentStep < questions.length) {
+                document.getElementById("question-text").textContent = questions[currentStep];
+                document.getElementById("userInput").value = ""; // Clear input for the next question
+                document.getElementById("output").textContent = "";
             } else {
-                message = "Hmm, I didn't understand that, but I hope you feel good today! 🫶";
+                document.getElementById("questions").style.display = "none";
+                document.getElementById("output").innerHTML = "Thank you for joining the Good Vibes Check today. I believe in you, and hope you have an amazing rest of the day! 🥰";
             }
-            
-            alert(message);
-            document.getElementById('question1').style.display = 'none';
-            document.getElementById('question2').style.display = 'block';
         }
 
-        function handleAmbition() {
-            const ambition = document.getElementById('ambitionInput').value.toLowerCase();
-            let message = '';
+        function handleResponse() {
+            const userInput = document.getElementById("userInput").value.toLowerCase();
+            let outputMessage;
 
-            if (ambition === 'yes') {
-                message = "Fantastic! Go after it with everything you’ve got! 🌟";
-            } else if (ambition === 'no') {
-                message = "That’s okay. Rest is important too! 🌷";
-            } else if (ambition === 'maybe') {
-                message = "That’s the spirit! Even a little bit of excitement can lead to great things! ✨";
+            if (currentStep < 2) {
+                outputMessage = responses[currentStep][userInput] || responses[currentStep].default;
             } else {
-                message = "No worries! Just take it easy and focus on what makes you feel good. 🫂";
+                outputMessage = responses[currentStep].default.replace("what you mentioned", userInput);
             }
 
-            alert(message);
-            document.getElementById('question2').style.display = 'none';
-            document.getElementById('question3').style.display = 'block';
-        }
-
-        function handleReflection() {
-            const reflection = document.getElementById('reflectionInput').value;
-            document.getElementById('reflectionMessage').innerText = `That’s wonderful! Being grateful for ${reflection} is a beautiful way to stay positive. ✨`;
-            document.getElementById('question3').style.display = 'none';
-            document.getElementById('finalMessage').style.display = 'block';
+            document.getElementById("output").textContent = outputMessage;
+            currentStep++;
+            askQuestion();
         }
     </script>
 
